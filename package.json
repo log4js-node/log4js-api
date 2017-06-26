@@ -1,0 +1,63 @@
+{
+  "name": "log4js-api",
+  "version": "1.0.0",
+  "description": "For libraries that want to include log4js for logging, but don't want to introduce version conflicts for users that also use log4js. Delegates to whatever log4js version can be found, but does not introduce a specific log4js version.",
+  "main": "lib/index.js",
+  "scripts": {
+      "lint": "eslint lib/ test/",
+      "prepush": "npm test",
+      "commitmsg": "validate-commit-msg",
+      "pretest": "eslint lib/**/* test/**/*",
+      "test": "tap 'test/**/*.js'",
+      "coverage": "tap 'test/**/*.js' --cov",
+      "codecov": "tap 'test/**/*.js' --cov --coverage-report=lcov && codecov"
+  },
+  "keywords": [
+    "log4js",
+    "logging",
+    "logger",
+    "api",
+    "compatibility"
+  ],
+  "author": "Gareth Jones <gareth.nomiddlename@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "codecov": "^2.2.0",
+    "eslint": "^4.0.0",
+    "husky": "^0.14.0",
+    "nyc": "^11.0.2",
+    "sandboxed-module": "^2.0.3",
+    "tap": "^10.5.2",
+    "validate-commit-msg": "^2.12.2"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "example",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 72,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "subject does not match subject pattern!",
+      "helpMessage": "\n# allowed type: feat, fix, docs, style, refactor, example, perf, test, chore, revert\n# subject no more than 50 chars\n# a body line no more than 72 chars"
+    }
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "lib/**/*.js"
+    ],
+    "require": [
+      "./sandbox-coverage"
+    ]
+  }
+}
