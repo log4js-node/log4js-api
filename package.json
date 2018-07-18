@@ -63,5 +63,6 @@
     "require": [
       "./sandbox-coverage"
     ]
-  }
+  },
+  "typings": "./index.d.ts"
 }
