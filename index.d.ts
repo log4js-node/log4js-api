@@ -1,6 +1,5 @@
 // interface declaration from log4js-node.
 interface Logger {
-    new(dispatch: Function, name: string): Logger;
     level: string;
     log(...args: any[]): void;
     isLevelEnabled(level?: string): boolean;
