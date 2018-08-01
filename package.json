@@ -1,6 +1,6 @@
 {
   "name": "@log4js-node/log4js-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "For libraries that want to include log4js for logging, but don't want to introduce version conflicts for users that also use log4js. Delegates to whatever log4js version can be found, but does not introduce a specific log4js version.",
   "main": "lib/index.js",
   "repository": {
